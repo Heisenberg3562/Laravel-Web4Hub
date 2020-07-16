@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hello World
+                    Hello {{auth()->user()->name ?? 'World'}}
                 </div>
 
                 <div class="links">
