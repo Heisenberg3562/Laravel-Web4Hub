@@ -14,9 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+Route::get('/features', function () {
+    return view('features');
+});
+Route::get('/contactus', function () {
+    return view('contact-us');
+});
+Route::get('/aboutus', function () {
+    return view('about-us');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::middleware(['auth'])->group(function (){
+    Route::get('/events/all','EventsController@allEvents')->name('events.all');
+    Route::get('/events/enrollments/{event}','EventsController@enrollments')->name('events.enrollments');
+//    Route::get('/events/{event}','EventsController@show')->name('events.show');
+    Route::resource('events','EventsController');
+    Route::resource('enrolls','EnrollController');
+});
