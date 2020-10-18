@@ -28,7 +28,8 @@ Route::get('/aboutus', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EventsController@index')->name('index');
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/events/all','EventsController@allEvents')->name('events.all');
