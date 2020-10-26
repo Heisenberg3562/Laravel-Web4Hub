@@ -20,7 +20,7 @@
         <section class="clean-block clean-hero" style="background-image:url({{ asset('assets/img/tech/image6.jpg') }});color:rgba(9, 162, 255, 0.1);">
             <div class="text">
                 <h2><br><strong>Create amazing virtual events right now</strong><br></h2>
-                <p><strong>Easy-to-use, powerful online event management</strong><br></p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                <p><strong>Easy-to-use, powerful online event management</strong><br></p><a class="btn btn-outline-light btn-lg" type="button" href="{{ url('/events/all') }}">SEE ALL</a></div>
         </section>
         <section class="clean-block clean-info dark" data-anijs="if: scroll, on: window, do: rollIn animated, before: $scrollReveal repeat">
             <div class="container">
@@ -34,7 +34,7 @@
                         <h3><br><strong>Event Creation and handling everything from start to finish</strong><br><br></h3>
                         <div class="getting-started-info">
                             <p>Our event management system simplifies the entire event planning&nbsp;process. Starting with&nbsp;sourcing your venue and ending with dashboards and reports after your event. We have everything covered.<br></p>
-                        </div><button class="btn btn-outline-primary btn-lg" type="button">Create Now</button></div>
+                        </div><a class="btn btn-outline-primary btn-lg" type="button" href="{{ url('/events/create') }}">Create Now</a></div>
                 </div>
             </div>
         </section>

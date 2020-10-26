@@ -107,6 +107,11 @@
 
 <main class="page login-page">
     <section class="clean-block clean-form dark">
+        @if( session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="container">
 
             {{--                <form action="" method=post>--}}

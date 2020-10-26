@@ -1,6 +1,6 @@
 
         <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-            <div class="container"><a class="navbar-brand logo" href="#">Web4Hub</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand logo" href="{{ url('/') }}">Web4Hub</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
@@ -30,6 +30,7 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item item" role="presentation"><a class="nav-link" href="{{ url('/events/all') }}">ALL EVENTS</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

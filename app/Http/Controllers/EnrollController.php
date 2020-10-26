@@ -75,7 +75,7 @@ class EnrollController extends Controller
 //            dd($test[0]);
 //            $test[0]->delete();
             $this->destroy($test[0]);
-            return redirect()->route('events.index')->with('status', 'Enrolled Successfully!');
+            return redirect()->route('events.index')->with('status', 'UnEnrolled Successfully!');
         }
 
     }
