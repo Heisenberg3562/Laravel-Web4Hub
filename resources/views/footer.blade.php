@@ -5,16 +5,34 @@
                     <h5>Get started</h5>
                     <ul>
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ url('/register') }}">Sign up</a></li>
-                        <li><a href="{{ url('/login') }}">Sign In</a></li>
+                        @guest
+
+                            @if (Route::has('register'))
+                                <li><a href="{{ url('/register') }}">Sign up</a></li>
+                                <li><a href="{{ url('/login') }}">Sign In</a></li>
+                            @endif
+                            @else
+                        <li>
+                            <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                        </li>
+
+                            @endguest
                     </ul>
                 </div>
                 <div class="col-sm-3 col-xl-5 offset-xl-0">
                     <h5>About us</h5>
                     <ul>
-                        <li><a href="{{ url('/aboutus') }}">About Us</a></li>
+                        <li><a href="{{ url('/gallery') }}">Gallery</a></li>
                         <li><a href="{{ url('/contactus') }}">Contact us</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="{{ url('/faq') }}">FAQ</a></li>
                     </ul>
                 </div>
             </div>
