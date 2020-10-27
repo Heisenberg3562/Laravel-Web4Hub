@@ -48,12 +48,13 @@
                         <div class="col-md-6">
                             <div class="info">
                                 <h3>{{ $event->title }}</h3>
-                                <div class="rating"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star-half-empty.svg')}}"><img src="{{asset('assets/img/star-empty.svg')}}"></div>
+{{--                                <div class="rating"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star.svg')}}"><img src="{{asset('assets/img/star-half-empty.svg')}}"><img src="{{asset('assets/img/star-empty.svg')}}"></div>--}}
                                 <div class="price">
                                     <h3>₹{{ $event->fees }}</h3>
                                 </div><a class="btn btn-primary btn-lg" type="button" href="{{ route('enrolls.show', [$event],[$enroll] ) }}"><i class="icon-basket"></i>@if($enroll.value('')=='[]')Enroll now @else Unenroll @endif</a><p></p>
                                 <div class="summary">
-                                    <p>{{ $event->body }}</p>
+                                    <h6><b>Type : {{ $event->type }}</b></h6>
+                                    <p>Date : {{ $event->date }}</p>
                                 </div>
                             </div>
                         </div>

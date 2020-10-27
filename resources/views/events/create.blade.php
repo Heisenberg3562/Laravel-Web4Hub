@@ -8,16 +8,16 @@
                 <h2 class="text-info">Create Event</h2>
                 <p>Let's Make Something Awesome<br>Your account is all set up, it's time to create your Event!<br></p>
             </div>
-            <div class="card">
+{{--            <div class="card">--}}
 
-                <div class="card-header">
-                    Add Event
+{{--                <div class="card-header">--}}
+{{--                    Add Event--}}
 
-                    <a href=" {{ route('events.index') }}" class="float-right">Back</a>
-                </div>
+{{--                    <a href=" {{ route('events.index') }}" class="float-right">Back</a>--}}
+{{--                </div>--}}
 
                 <div class="card-body">
-                    <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data" style="width: available">
+                    <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
@@ -121,7 +121,7 @@
                         <button class="btn btn-primary">Add</button>
                     </form>
                 </div>
-            </div>
+{{--            </div>--}}
         </div>
     </div>
 </div>

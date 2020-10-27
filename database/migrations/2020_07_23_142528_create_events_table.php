@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->longText('body');
             $table->date('date');
             $table->bigInteger('fees');
-            $table->string('type', 16);
+            $table->string('type', 100);
             $table->boolean('status');
             $table->timestamps();
             $table->string('poster');

@@ -8,12 +8,12 @@
                 <h2 class="text-info">Edit Event</h2>
                 <p>Let's Make Something Awesome<br>Edit your event to make it even Better!<br></p>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    Edit Event
+{{--            <div class="card">--}}
+{{--                <div class="card-header">--}}
+{{--                    Edit Event--}}
 
-                    <a href=" {{ route('events.index') }}" class="float-right">Back</a>
-                </div>
+{{--                    <a href=" {{ route('events.index') }}" class="float-right">Back</a>--}}
+{{--                </div>--}}
 
                 <div class="card-body">
                     <form action="{{ route('events.update', [$event]) }}" method="POST" enctype="multipart/form-data">
@@ -54,8 +54,24 @@
                             <label for="type">Type</label>
                             <select name="type" class="form-control @error('type') is-invalid @enderror">
                                 <option value="">--Select--</option>
-                                <option value="Type 1" {{ 'Type 1' == old('type', $event->type) ? 'selected' : '' }} >Type 1</option>
-                                <option value="Type 2" {{ 'Type 2' == old('type', $event->type) ? 'selected' : '' }}>Type 2</option>
+                                <option value="Hands-on Workshop - Virtual" {{ 'Hands-on Workshop - Virtual' == old('type', $event->type) ? 'selected' : '' }} >Hands-on Workshop - Virtual</option>
+                                <option value="Hands-on Workshop - In person" {{ 'Hands-on Workshop - In person' == old('type', $event->type) ? 'selected' : '' }}>Hands-on Workshop - In person</option>
+                                <option value="Speaker Session / Tech Talk - Virtual" {{ 'Speaker Session / Tech Talk - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Speaker Session / Tech Talk - Virtual</option>
+                                <option value="Speaker Session / Tech Talk - In person" {{ 'Speaker Session / Tech Talk - In person' == old('type', $event->type) ? 'selected' : '' }}>Speaker Session / Tech Talk - In person</option>
+                                <option value="Info Session - Virtual" {{ 'Info Session - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Info Session - Virtual</option>
+                                <option value="Info Session - In person" {{ 'Info Session - In person' == old('type', $event->type) ? 'selected' : '' }}>Info Session - In person</option>
+                                <option value="Android Study Jams: New to Programming - Virtual" {{ 'Android Study Jams: New to Programming - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Android Study Jams: New to Programming - Virtual</option>
+                                <option value="Android Study Jams: New to Programming - In person" {{ 'Android Study Jams: New to Programming - In person' == old('type', $event->type) ? 'selected' : '' }}>Android Study Jams: New to Programming - In person</option>
+                                <option value="Android Study Jams: Prior Programming Experience - Virtual" {{ 'Android Study Jams: Prior Programming Experience - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Android Study Jams: Prior Programming Experience - Virtual</option>
+                                <option value="Android Study Jams: Prior Programming Experience - In person" {{ 'Android Study Jams: Prior Programming Experience - In person' == old('type', $event->type) ? 'selected' : '' }}>Android Study Jams: Prior Programming Experience - In person</option>
+                                <option value="Explore ML Beginner - Virtual" {{ 'Explore ML Beginner - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Explore ML Beginner - Virtual</option>
+                                <option value="Explore ML Beginner - In person" {{ 'Explore ML Beginner - In person' == old('type', $event->type) ? 'selected' : '' }}>Explore ML Beginner - In person</option>
+                                <option value="Explore ML Intermediate - Virtual" {{ 'Explore ML Intermediate - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Explore ML Intermediate - Virtual</option>
+                                <option value="Explore ML Intermediate - In person" {{ 'Explore ML Intermediate - In person' == old('type', $event->type) ? 'selected' : '' }}>Explore ML Intermediate - In person</option>
+                                <option value="Hackathon - Virtual" {{ 'Hackathon - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Hackathon - Virtual</option>
+                                <option value="Hackathon - In person" {{ 'Hackathon - In person' == old('type', $event->type) ? 'selected' : '' }}>Hackathon - In person</option>
+                                <option value="Solution Challenge Event - Virtual" {{ 'Solution Challenge Event - Virtual' == old('type', $event->type) ? 'selected' : '' }}>Solution Challenge Event - Virtual</option>
+                                <option value="Solution Challenge Event - In person" {{ 'Solution Challenge Event - In person' == old('type', $event->type) ? 'selected' : '' }}>Solution Challenge Event - In person</option>
                             </select>
                             @error('type')
                                 <span class="invalid-feedback" role="alert">
@@ -108,7 +124,7 @@
 
                 </div>
             </div>
-        </div>
+{{--        </div>--}}
     </div>
 </div>
 @endsection

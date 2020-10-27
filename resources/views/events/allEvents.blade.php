@@ -13,7 +13,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Enrollments</th>
-                                <th>Action</th>
+                                <th>Type</th>
                             </tr>
                             </thead>
                             <tbody>

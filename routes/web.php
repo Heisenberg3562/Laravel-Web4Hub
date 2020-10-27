@@ -25,6 +25,15 @@ Route::get('/contactus', function () {
 Route::get('/aboutus', function () {
     return view('about-us');
 });
+Route::get('/faq', function () {
+    return view('faq');
+});
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+Route::get('/services', function () {
+    return view('service-page');
+});
 
 Auth::routes();
 

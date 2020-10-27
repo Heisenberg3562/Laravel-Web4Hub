@@ -4,16 +4,16 @@
                 <div class="col-sm-3 col-xl-6">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Sign In</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/register') }}">Sign up</a></li>
+                        <li><a href="{{ url('/login') }}">Sign In</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3 col-xl-5 offset-xl-0">
                     <h5>About us</h5>
                     <ul>
-                        <li><a href="#">Information</a></li>
-                        <li><a href="#">Contact us</a></li>
+                        <li><a href="{{ url('/aboutus') }}">About Us</a></li>
+                        <li><a href="{{ url('/contactus') }}">Contact us</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
