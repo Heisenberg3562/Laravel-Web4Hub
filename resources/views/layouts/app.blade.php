@@ -97,6 +97,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}">
+    <style>
+        .table td.fit,
+        .table th.fit {
+            white-space: nowrap;
+            width: 1%;
+        }
+    </style>
 </head>
 
 <body>
@@ -132,10 +139,7 @@
 
 
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-<script src="assets/js/script.min.js"></script>
 </body>
 
 </html>

@@ -38,12 +38,15 @@ Route::get('/services', function () {
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', 'EventsController@index')->name('index');
+//Route::get('/home', 'EventsController@index')->name('index');
 
 Route::middleware(['auth'])->group(function (){
+    Route::get('/home', 'EventsController@index')->name('index');
     Route::get('/events/all','EventsController@allEvents')->name('events.all');
+    Route::get('/user/all','EventsController@alluser')->name('events.alluser');
     Route::get('/events/enrollments/{event}','EventsController@enrollments')->name('events.enrollments');
-//    Route::get('/events/{event}','EventsController@show')->name('events.show');
+    Route::delete('/user/{user}','EventsController@destroyuser')->name('events.destroyuser');
+    Route::post('/user/role/{role}','EventsController@roles')->name('events.roles');
     Route::resource('events','EventsController');
     Route::resource('enrolls','EnrollController');
 });

@@ -113,5 +113,6 @@ class EnrollController extends Controller
     {
         //
         $enroll->delete();
+        return redirect()->route('events.index',$enroll)->with('status', 'Enrollment Deleted Successfully!');
     }
 }

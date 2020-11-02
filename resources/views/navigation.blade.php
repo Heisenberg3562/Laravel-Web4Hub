@@ -31,8 +31,12 @@
                             @endif
                         @else
                             <li class="nav-item item" role="presentation"><a class="nav-link" href="{{ url('/events') }}">DASHBOARD</a></li>
+                            @if(auth()->user()->role == 'moderator')
+                            <li class="nav-item item" role="presentation"><a class="nav-link" href="{{ url('/user/all') }}">ALL USERS</a></li>
+                            @else
                             <li class="nav-item item" role="presentation"><a class="nav-link" href="{{ url('/events/all') }}">ALL EVENTS</a></li>
-                            <li class="nav-item dropdown">
+                            @endif
+                                <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Enroll;
 use App\Event;
-use http\Client\Curl\User;
+use App\User;
+//use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use File;
 use Illuminate\Support\Facades\DB;
@@ -19,17 +20,31 @@ class EventsController extends Controller
      */
     public function enrollments(Event $event)
     {
-        $enroll = Enroll::where([
-            ['event_id',$event->getAttributes('id')]
-        ])
-            ->get();
-        $user = DB::table('users')
-        ->get();
+        if (auth()->user()->role == 'user') {
+            $enroll = Enroll::where([
+                ['event_id', $event->getAttributes('id')]
+            ])
+                ->get();
+            $user = DB::table('users')
+                ->get();
 //        dd($event.value(''));
-        return view('events.enrollments',[
-            'user' => $user,
-            'enroll' => $enroll
-        ]);
+            return view('events.enrollments', [
+                'user' => $user,
+                'enroll' => $enroll
+            ]);
+        }else{
+            $enroll = Enroll::where([
+                ['event_id', $event->getAttributes('id')]
+            ])
+                ->get();
+            $user = DB::table('users')
+                ->get();
+//        dd($event.value(''));
+            return view('events.enrollmanager', [
+                'user' => $user,
+                'enroll' => $enroll
+            ]);
+        }
     }
 
     /**
@@ -39,15 +54,27 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::where('user_id',auth()->user()->id)
-            ->get();
-        $enroll = DB::table('enrolls')
-            ->get();
+        if (auth()->user()->role == 'user') {
+            $events = Event::where('user_id', auth()->user()->id)
+                ->get();
+            $enroll = DB::table('enrolls')
+                ->get();
 //        dd($enroll);
-        return view('events.index',[
-            'events' => $events,
-            'enroll' => $enroll
-        ]);
+            return view('events.index', [
+                'events' => $events,
+                'enroll' => $enroll
+            ]);
+        }else{
+            $events = Event::where('status','1')
+                ->get();
+            $enroll = DB::table('enrolls')
+                ->get();
+//        dd($enroll);
+            return view('events.moderateEvents',[
+                'events' => $events,
+                'enroll' => $enroll
+            ]);
+        }
     }
 
     /**
@@ -65,6 +92,27 @@ class EventsController extends Controller
         return view('events.allEvents',[
             'events' => $events,
             'enroll' => $enroll
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function alluser()
+    {
+        $events = DB::table('events')
+            ->get();
+        $enroll = DB::table('enrolls')
+            ->get();
+        $users = DB::table('users')
+            ->get();
+//        dd($enroll);
+        return view('events.alluser',[
+            'events' => $events,
+            'enroll' => $enroll,
+            'users' => $users
         ]);
     }
 
@@ -106,7 +154,7 @@ class EventsController extends Controller
 
         auth()->user()->events()->create($data);
 
-        return redirect()->route('events.index')->with('status', 'Story Created Successfully!');
+        return redirect()->route('events.index')->with('status', 'Event Created Successfully!');
     }
 
     /**
@@ -177,7 +225,35 @@ class EventsController extends Controller
         }
 
         $event->update($data);
-        return redirect()->route('events.index')->with('status', 'Story Updated Successfully!');
+        return redirect()->route('events.index')->with('status', 'Event Updated Successfully!');
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function roles($user)
+    {
+
+//        $test = User::where([['id', $user]])->get();
+        $test = User::find($user);
+//        dd($test[0]);
+        if ($test['role'] == 'user'){
+            $data['role'] = 'moderator';
+//            dd($data);
+            $test->update($data);
+//            $this->up($test,$data);
+        }else{
+            $data['role'] = 'user';
+//            $this->up($test,$data);
+            $test->update($data);
+        }
+        return redirect()->route('events.alluser')->with('status', 'Role Updated Successfully!');
+    }
+
+    public function up(User $user,$data){
+        $user->update($data);
     }
 
     /**
@@ -196,7 +272,27 @@ class EventsController extends Controller
         }
         //dd($image_path);
         $event->delete();
-        return redirect()->route('events.index')->with('status', 'Story Deleted Successfully!');
+        return redirect()->route('events.index')->with('status', 'Event Deleted Successfully!');
 
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyuser($id)
+    {
+        //
+//        $user->delete();
+//        return redirect()->route('events.index')->with('status', 'User Deleted Successfully!');
+
+//        dd($id);
+        $users = User::where('id',$id);
+//        dd($users);
+        $users->delete();
+
+        return redirect()->route('events.index')->with('status', 'User Deleted Successfully!');
     }
 }
