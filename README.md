@@ -17,11 +17,15 @@ User needs to Login at the initial phase, set his/her profile. The core phase of
 
 This web application focuses to make it easier for a layman to plan an event in a hassle-free manner. This website will assist him/her in planning a successful and fun event.
 
-![Home Page](https://web4hub.ml/assets/img/git/home.gif "")
+![Home Page](https://github.com/Heisenberg3562/Laravel-Web4Hub/blob/master/public/assets/git/home.gif "")
 
 ## Features
 
 - Easily manage all your events on your [Dashboard](https://web4hub.ml/events) Page
+
+![Dashboard](https://github.com/Heisenberg3562/Laravel-Web4Hub/blob/master/public/assets/git/dashboard.png "")
+
+![View](https://github.com/Heisenberg3562/Laravel-Web4Hub/blob/master/public/assets/git/view.png "")
 
 ## Server Features
 
