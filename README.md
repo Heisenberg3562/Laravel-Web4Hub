@@ -7,7 +7,13 @@ Site url : https://web4hub.ml/
 
 ## Table of Contents
 
+- [What is Web4Hub?](#what-is-web4hub)
 - [Website Features](#features)
+- [Server Features](#server-features)
+- [Installation](#installation)
+- [Launch](#launch)
+- [Bugs and Feedback](#bugs-and-feedback)
+- [License](#license)
 
 ## What is Web4Hub?
 
@@ -24,8 +30,6 @@ This web application focuses to make it easier for a layman to plan an event in 
 - Easily manage all your events on your [Dashboard](https://web4hub.ml/events) Page
 
 ![Dashboard](https://github.com/Heisenberg3562/Laravel-Web4Hub/blob/master/public/assets/git/dashboard.png "")
-
-![View](https://github.com/Heisenberg3562/Laravel-Web4Hub/blob/master/public/assets/git/view.png "")
 
 ## Server Features
 
