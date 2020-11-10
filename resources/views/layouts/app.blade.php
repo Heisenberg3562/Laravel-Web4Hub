@@ -109,7 +109,7 @@
 <body>
 
 
-@include('navigation');
+@include('navigation')
 
 
 <main class="page login-page">
@@ -129,13 +129,13 @@
             {{--                    <div class="form-group">--}}
             {{--                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>--}}
             {{--                    </div><button class="btn btn-primary btn-block" type="submit">Log In</button></form>--}}
-            @yield('content');
+            @yield('content')
         </div>
     </section>
 </main>
 
 
-@include("footer");
+@include("footer")
 
 
 

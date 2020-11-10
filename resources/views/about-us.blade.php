@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">About Us</h2>
-                    <p>We are group of students of third year of branch computer engineering. We study in Anjuman-I-Islam's Kalsekar Technical Campus. </p>
+                    <p>We are group of students of third year of branch computer engineering. We study in Anjuman-I-Islam'<s></s> Kalsekar Technical Campus. </p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-lg-3">

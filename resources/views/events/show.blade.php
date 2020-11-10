@@ -37,7 +37,8 @@
                 <h2 class="text-info">Web4Hub</h2>
                 <p>Easy-to-use, powerful online event management.</p>
             </div>
-            <div class="block-content">
+        </div>
+        <div class="block-content">
                 <div class="product-info">
                     <div class="row">
                         <div class="col-md-6">
@@ -61,42 +62,43 @@
                     </div>
                 </div>
                 <div class="product-info">
-                    <div>
-                        <ul class="nav nav-tabs" id="myTab">
+                <div>
+                    <ul class="nav nav-tabs" id="myTab">
                             <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" id="description-tab" href="#description">Description</a></li>
         {{--                            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" id="specifications-tabs" href="#specifications">Specifications</a></li>--}}
                         </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane active fade show description" role="tabpanel" id="description">
-                                <p>
-                                    {{ $event->body }}
-                                </p>
-                            </div>
-                            <div class="tab-pane fade show specifications" role="tabpanel" id="specifications">
-                                <div class="table-responsive table-bordered">
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                        <tr>
-                                            <td class="stat">Specification 1</td>
-                                            <td>data 1 </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="stat">Specification 2</td>
-                                            <td>data 2</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="stat">Specification 3</td>
-                                            <td>data 3</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="stat">Specification 4</td>
-                                            <td>data 4</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane active fade show description" role="tabpanel" id="description">
+                            <p>
+                                {{ $event->body }}
+                            </p>
+                        </div>
+                        <div class="tab-pane fade show specifications" role="tabpanel" id="specifications">
+                            <div class="table-responsive table-bordered">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <td class="stat">Specification 1</td>
+                                        <td>data 1 </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="stat">Specification 2</td>
+                                        <td>data 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="stat">Specification 3</td>
+                                        <td>data 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="stat">Specification 4</td>
+                                        <td>data 4</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

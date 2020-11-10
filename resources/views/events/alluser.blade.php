@@ -58,6 +58,7 @@
                                         {{$count}}
                                     </td>
                                     <td>
+                                        @if(auth()->user()->id != $user->id)
 {{--                                        <a href="{{ route('events.alluser') }}" class="btn btn-secondary">View</a>--}}
                                         <form action="{{ route('events.roles',[$user->id])}}" method="post" style="all: unset;">
                                             @csrf
@@ -75,6 +76,7 @@
 {{--                                        {{ Form::open(['method' => 'DELETE', 'route' => ['events.destroyuser', $user->id]]) }}--}}
 {{--                                        {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}--}}
 {{--                                        {{ Form::close() }}--}}
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach
